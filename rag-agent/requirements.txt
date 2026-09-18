@@ -1,0 +1,25 @@
+fastapi>=0.115,<0.116
+uvicorn[standard]>=0.32,<0.33
+pydantic>=2.9,<3
+python-dotenv>=1.0,<2
+
+# Agent orchestration
+langgraph>=0.2.60,<0.3
+langchain-core>=0.3.25,<0.4
+
+# LLM providers (swappable via LLM_PROVIDER env var)
+langchain-anthropic>=0.3.0,<0.4
+langchain-openai>=0.2.10,<0.3
+langchain-community>=0.3.10,<0.4
+
+# Local embedding model (ONNX MiniLM-L6, 384-dim, no API key) — we only use
+# chromadb.utils.embedding_functions here, not its storage/collection API.
+chromadb>=0.5.20,<0.6
+# chromadb 0.5.x's telemetry code breaks on posthog>=3 (capture() signature changed) —
+# pin below that so importing it doesn't spam "Failed to send telemetry event".
+posthog<3
+
+# Vector store: LangChain's PGVector (Postgres + pgvector)
+langchain-postgres>=0.0.12,<0.1
+psycopg[binary]>=3.1,<4
+pgvector>=0.3,<0.4

@@ -1,0 +1,16 @@
+services:
+  pgvector:
+    image: pgvector/pgvector:pg16
+    container_name: jobmatch-pgvector
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jobmatch_vectors
+      POSTGRES_USER: jobmatch
+      POSTGRES_PASSWORD: jobmatch
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgvector_data:/var/lib/postgresql/data
+
+volumes:
+  pgvector_data:

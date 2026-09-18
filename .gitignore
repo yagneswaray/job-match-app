@@ -1,0 +1,17 @@
+# Secrets
+rag-agent/.env
+
+# Backend
+backend/target/
+backend/data/
+
+# RAG agent
+rag-agent/.venv/
+rag-agent/__pycache__/
+rag-agent/**/__pycache__/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store
